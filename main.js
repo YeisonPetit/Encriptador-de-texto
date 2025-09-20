@@ -1,16 +1,15 @@
 function encriptar() {
     let texto = document.getElementById("texto").value;
-    let tituloMensaje = document.getElementById("titulo-mensaje"); 
+    let tituloMensaje = document.getElementById("titulo-mensaje");
     let parrafo = document.getElementById("parrafo");
     let muñeco = document.getElementById("muñeco");
 
     let textoCifrado = texto
-                       .replace(/e/gi, "enter")
-                       .replace(/i/gi, "imes")
-                       .replace(/a/gi, "ai")
-                       .replace(/o/gi, "ober")
-                       .replace(/u/gi, "ufat");
-
+        .replace(/e/gi, "enter")
+        .replace(/i/gi, "imes")
+        .replace(/a/gi, "ai")
+        .replace(/o/gi, "ober")
+        .replace(/u/gi, "ufat");
     if (texto.length != 0) {
         document.getElementById("texto").value = textoCifrado;
         tituloMensaje.textContent = "Texto encriptado con éxito";
@@ -22,19 +21,24 @@ function encriptar() {
         parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
         swal("Ooopss!", "Debes ingresar un texto", "warning")
     }
-}
-function desencriptar() {
-let texto = document.getElementById("texto").value;
-let tituloMensaje = document.getElementById("titulo-mensaje"); 
-let parrafo = document.getElementById("parrafo");
-let muñeco = document.getElementById("muñeco");
 
-let textoCifrado = texto
-    .replace(/enter/gi, "e")
-    .replace(/imes/gi, "i")
-    .replace(/ai/gi, "a")
-    .replace(/ober/gi, "o")
-    .replace(/ufat/gi, "u");
+    if(texto.toLowerCase() != texto){
+        swal("Ooopss!", "No se permiten mayúsculas ni caracteres especiales", "warning")
+    }
+}
+
+function desencriptar() {
+    let texto = document.getElementById("texto").value;
+    let tituloMensaje = document.getElementById("titulo-mensaje");
+    let parrafo = document.getElementById("parrafo");
+    let muñeco = document.getElementById("muñeco");
+
+    let textoCifrado = texto
+        .replace(/enter/gi, "e")
+        .replace(/imes/gi, "i")
+        .replace(/ai/gi, "a")
+        .replace(/ober/gi, "o")
+        .replace(/ufat/gi, "u");
 
     if (texto.length != 0) {
         document.getElementById("texto").value = textoCifrado;
@@ -49,3 +53,15 @@ let textoCifrado = texto
     }
 }
 
+document.addEventListener("DOMContentLoaded", () =>  {
+    const loader = document.getElementById("loader");
+    const loaderContainer = document.getElementById("loaderContainer");
+    loader.style.display = "block";
+    loaderContainer.style.display = "flex";
+
+    setTimeout(() => {
+        loader.style.display = "none";
+        loaderContainer.style.display = "none";
+    }, 4000); // Ocultar el loader después de 4 segundos
+    console.log("contenido cargado");
+});

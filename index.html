@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador de Texto</title>
-    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/img/shield.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="loaderContainer" id="loaderContainer" style="display: none">
+      <div class="loader" id="loader" style="display: none"></div>
+    </div>
     <div>
-        <header class="enlace">
-            <a href="index.html">
-                <img src="./img/Logo.png" alt="Logo">
-             </a>
-             
-                 
-            </header>
+      <header class="enlace">
+        <!-- <a href="index.html">
+          <img src="./img/Logo.png" alt="Logo" />
+        </a> -->
+        <nav class="icons">
+          <a
+            href="https://github.com/YeisonPetit/Encriptador-de-texto"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </nav>
+      </header>
     </div>
     <div class="contenedor">
-        <div class="encriptar">
-    <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="Increse el texto aqui"></textarea>
+      <div class="encriptar">
+        <textarea
+          name="texto"
+          class="texto"
+          id="texto"
+          cols="30"
+          rows="10"
+          placeholder="Increse el texto aqui"
+        ></textarea>
 
         <div class="terminos">
-        <p>Solo letras minusculas y sin acentos</p>
-    </div>
-        <div class="botones">
-        <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar
-        </button>
-        <input type="button" class="btn-desencriptar" value="Desencriptar" onclick="desencriptar()">
-    </div>
-    </div>
-    <div class="encriptado">
-        <img src="img/muñeco (2).png" alt="muñeco" id="muñeco">
-        <div class="mensaje-encriptado" id="mensaje-encriptado">
-            <h2 id="titulo-mensaje">Ningun mensaje fue encontrado</h2>
-            <p id="parrafo">Incresa el texto que deseas encriptar o desencriptar</p>
-            <!--<textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>-->
+          <p>Solo letras minusculas y sin acentos</p>
         </div>
+        <div class="botones">
+          <button class="btn-encriptar" type="button" onclick="encriptar()">
+            Encriptar
+          </button>
+          <input
+            type="button"
+            class="btn-desencriptar"
+            value="Desencriptar"
+            onclick="desencriptar()"
+          />
+        </div>
+      </div>
+      <div class="encriptado">
+        <img src="img/muñeco (2).png" alt="muñeco" id="muñeco" />
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+          <h2 id="titulo-mensaje">Ningun mensaje fue encontrado</h2>
+          <p id="parrafo">
+            Incresa el texto que deseas encriptar o desencriptar
+          </p>
+          <!--<textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>-->
+        </div>
+      </div>
     </div>
-</div>
-</body>
-<script src="main.js"></script>
+  </body>
+  <script src="main.js"></script>
 </html>
